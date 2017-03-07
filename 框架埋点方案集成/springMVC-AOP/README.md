@@ -15,6 +15,7 @@
 	</filter-mapping>
 	
 2,CatCacheTransaction注解示例
+    
     @CatCacheTransaction
     public V get(K key) {
         
@@ -29,6 +30,7 @@
     }
 
 3,CatHttpRequestTransaction注解示例,URL聚合注解
+    
     @RequestMapping(value = "/orders/{userId}/{orderStatus}")
     @ResponseBody
     @CatHttpRequestTransaction(type = "URL", name = "/orders")
@@ -37,6 +39,7 @@
     }
     
 4,CatDubboClientTransaction注解示例
+    
     @CatDubboClientTransaction(callApp="orders",callServer = "orderServer")
     public List<Long> getOrdersByUser() {
         

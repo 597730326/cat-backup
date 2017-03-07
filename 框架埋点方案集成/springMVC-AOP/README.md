@@ -1,8 +1,8 @@
-ÇĞÃæ×¢½â·½Ê½Âñµã
-ÊµÏÖÒÔÇĞÃæ×¢½â·½Ê½¿ìËÙ¶ÔÏµÍ³½øĞĞÂñµã£¬ÔÚĞèÒªÂñµãµÄÀà»ò·½·¨¼ÓÉÏ×¢½â¼´¿É£¨»áÓĞĞÔÄÜÓ°Ïì£©
-¾ßÌå²Ù×÷ÈçÏÂ:
-1,web.xmlÖĞÔö¼Ófilter,url-patternÅäÖÃĞèÒªÂñµãµÄrestful½Ó¿Ú,·ÀÖ¹¾²Ì¬×ÊÔ´ÂÒÈë
-  <filter>
+åˆ‡é¢æ³¨è§£æ–¹å¼åŸ‹ç‚¹
+å®ç°ä»¥åˆ‡é¢æ³¨è§£æ–¹å¼å¿«é€Ÿå¯¹ç³»ç»Ÿè¿›è¡ŒåŸ‹ç‚¹ï¼Œåœ¨éœ€è¦åŸ‹ç‚¹çš„ç±»æˆ–æ–¹æ³•åŠ ä¸Šæ³¨è§£å³å¯ï¼ˆä¼šæœ‰æ€§èƒ½å½±å“ï¼‰
+å…·ä½“æ“ä½œå¦‚ä¸‹:
+1,web.xmlä¸­å¢åŠ filter,url-patterné…ç½®éœ€è¦åŸ‹ç‚¹çš„restfulæ¥å£,é˜²æ­¢é™æ€èµ„æºä¹±å…¥
+       <filter>
 		<filter-name>cat-filter</filter-name>
 		<filter-class>com.dianping.cat.servlet.CatFilter</filter-class>
 	</filter>
@@ -14,30 +14,30 @@
 		<dispatcher>FORWARD</dispatcher>
 	</filter-mapping>
 	
-2,CatCacheTransaction×¢½âÊ¾Àı
-		@CatCacheTransaction
+2,CatCacheTransactionæ³¨è§£ç¤ºä¾‹
+    @CatCacheTransaction
     public V get(K key) {
         
     }
-		@CatCacheTransaction
+    @CatCacheTransaction
     public void put(K key, V value) {
        
     }
-		@CatCacheTransaction
+    @CatCacheTransaction
     public void delete(K key) {  
        
     }
 
-3,CatHttpRequestTransaction×¢½âÊ¾Àı,URL¾ÛºÏ×¢½â
-		@RequestMapping(value = "/orders/{userId}/{orderStatus}")
+3,CatHttpRequestTransactionæ³¨è§£ç¤ºä¾‹,URLèšåˆæ³¨è§£
+    @RequestMapping(value = "/orders/{userId}/{orderStatus}")
     @ResponseBody
     @CatHttpRequestTransaction(type = "URL", name = "/orders")
     public String userOrders() {
     
     }
     
-4,CatDubboClientTransaction×¢½âÊ¾Àı
-		@CatDubboClientTransaction(callApp="orders",callServer = "orderServer")
+4,CatDubboClientTransactionæ³¨è§£ç¤ºä¾‹
+    @CatDubboClientTransaction(callApp="orders",callServer = "orderServer")
     public List<Long> getOrdersByUser() {
         
     }
